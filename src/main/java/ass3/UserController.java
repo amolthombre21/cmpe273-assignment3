@@ -2,6 +2,7 @@ package ass3;
 
 import java.net.URI;
 
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,14 +17,14 @@ import com.justinsb.etcd.EtcdResult;
 @RestController
 public class UserController extends WebMvcConfigurerAdapter {
 
-	EtcdClient client = new EtcdClient(URI.create("http://54.183.225.139:4001/"));
+	EtcdClient client = new EtcdClient(URI.create("http://54.67.121.34:4001/"));
 
 	@RequestMapping(value = "/api/v1/counter", method = RequestMethod.GET)
 	public EtcdResult setAndGet() throws Exception {
 
 		EtcdResult result;
 
-		String key = "/112233445/counter";
+		String key = "/009998378/counter";
 		result = this.client.get(key);
 		System.out.println("Before : "+result);
 		String str = "";
